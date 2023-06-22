@@ -19,13 +19,14 @@ class Repository(
 	someValue: Int,
 ) {
 
+	private val value: Int = someValue
+	var value2: Int
+		private set
+
 	init {
 		println("Я родился с числом $someValue")
+		this.value2 = publicInt
 	}
-
-	private val value: Int = someValue
-	var value2: Int = 55
-		private set
 
 	fun get(): Int = networkDataSource.get()
 	fun getInt() = this.protectedInt
