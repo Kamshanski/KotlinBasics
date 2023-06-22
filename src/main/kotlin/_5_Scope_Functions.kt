@@ -13,7 +13,7 @@ fun main() {
 
 	// run
 	val firstAndLast = list.run {
-		listOf(first(), last())
+		listOf(first(), last())		// Аналогично listOf(this.first(), this.last())
 	}
 
 	// with

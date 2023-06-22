@@ -19,6 +19,14 @@ class Repository(
 	someValue: Int,
 ) {
 
+	constructor(internalInt: Int) : this(
+		BaseDataSource(),
+		2,
+		3,
+		internalInt = internalInt,
+		5,
+	)
+
 	private val value: Int = someValue
 	var value2: Int
 		private set
@@ -32,7 +40,7 @@ class Repository(
 	fun getInt() = this.protectedInt
 }
 
-open class BaseDataSource : DataSource {
+open class BaseDataSource() : DataSource {
 
 	open fun load() = 5
 
